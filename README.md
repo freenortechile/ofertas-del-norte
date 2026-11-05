@@ -6,14 +6,13 @@ Catálogo de ofertas de Mercado Libre (tecnología, consolas, hogar, cocina y ro
 1. Abre `datos/productos.xlsx` y cambia la hoja **Productos** (precio hoy, precio antes, descuento, stock, mostrar).
 2. Guarda con el mismo nombre.
 3. En GitHub: carpeta `datos` → **Add file → Upload files** → arrastra `productos.xlsx` → **Commit changes**.
-4. En 1-2 minutos GitHub Actions lee el Excel y publica la web actualizada.
+4. En 1-2 minutos GitHub Pages publica el cambio: la web lee el Excel directamente, no hace falta nada más.
 
 ## Archivos
 - `index.html` – la página.
 - `datos/productos.xlsx` – los productos (este archivo es público: no pongas ganancias ni datos personales).
 - `img/` – fotos de productos y logo.
-- `scripts/excel_a_json.py` – convierte el Excel en `productos.json`.
-- `.github/workflows/publicar.yml` – publica en GitHub Pages en cada cambio.
+- `scripts/excel_a_json.py` – opcional: genera `productos.json` (respaldo) para probar en tu PC.
 
 ## Probar en tu PC
 ```

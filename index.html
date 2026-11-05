@@ -339,7 +339,44 @@ footer a{color:#fff}
   $("#qTop").addEventListener("keydown", e => { if (e.key === "Enter") document.querySelector("#productos").scrollIntoView(); });
   $("#orden").addEventListener("change", pintar);
 
-  fetch("productos.json?v=" + Date.now()).then(r => { if(!r.ok) throw 0; return r.json(); }).then(d => {
+  // Lee el Excel datos/productos.xlsx directamente (no necesita GitHub Actions)
+  const nk = s => norm(s).replace(/\(.*?\)/g,"").replace(/\s+/g," ").trim();
+  const COLS = {"mostrar":"mostrar","producto":"nombre","tipo":"tipo","categoria":"tipo","marca":"marca","detalle":"detalle","precio hoy":"precio","precio antes":"antes","descuento":"descuento","link afiliado":"link","codigo ml":"codigo","stock":"stock","imagen":"imagen","destacado":"destacado"};
+  const si = v => ["si","s","x","1","true"].includes(nk(v));
+  const num = v => { if (v == null || v === "") return null; if (typeof v === "number") return v; let t = String(v).replace(/[$\s%]/g,""); if (t.includes(",") && t.includes(".")) t = t.replace(/\./g,"").replace(",","."); else if (/\.\d{3}$/.test(t)) t = t.replace(/\./g,""); else t = t.replace(",","."); const n = parseFloat(t); return isNaN(n) ? null : n; };
+  function leerExcel(buf){
+    const wb = XLSX.read(buf, {type:"array"});
+    const ws = wb.Sheets["Productos"]; if (!ws) throw new Error("sin hoja Productos");
+    const filas = XLSX.utils.sheet_to_json(ws, {header:1, raw:true, defval:null});
+    let h = -1, mapa = {};
+    for (let r = 0; r < Math.min(15, filas.length); r++){ const v = (filas[r]||[]).map(nk); if (v.includes("producto")){ h = r; v.forEach((x,i) => { if (COLS[x]) mapa[COLS[x]] = i; }); break; } }
+    if (h < 0) throw new Error("sin encabezado");
+    const prods = [];
+    for (let r = h+1; r < filas.length; r++){
+      const f = filas[r] || [], g = k => mapa[k] != null ? f[mapa[k]] : null;
+      const nombre = String(g("nombre") || "").trim(); if (!nombre) continue;
+      if (mapa.mostrar != null && !si(g("mostrar"))) continue;
+      const precio = num(g("precio")); let link = String(g("link") || "").trim(); if (!precio || !link) continue;
+      if (!/^http/.test(link)) link = "https://" + link;
+      let antes = num(g("antes")), desc = num(g("descuento")); if (desc && desc > 1) desc = desc/100;
+      if (antes && antes <= precio) antes = null;
+      if (!desc && antes) desc = Math.floor((1 - precio/antes)*100 + 1e-9)/100;
+      let img = String(g("imagen") || "").trim(); if (img && !/^http/.test(img)) img = "img/" + img;
+      let tipo = String(g("tipo") || "").trim() || "Otros"; tipo = tipo[0].toUpperCase() + tipo.slice(1);
+      prods.push({nombre, tipo, marca:String(g("marca")||"").trim(), detalle:String(g("detalle")||"").trim(), precio:Math.round(precio), antes:antes?Math.round(antes):null,
+        descuento: desc ? Math.round(desc*100) : null, link, codigo:(String(g("codigo")||"").trim().replace(/^[—-]+|[—-]+$/g,"")) || null,
+        stock:String(g("stock")||"Disponible").trim(), imagen: img || null, destacado: si(g("destacado"))});
+    }
+    const cfg = {}, wc = wb.Sheets["Configuración"] || wb.Sheets["Configuracion"];
+    if (wc) XLSX.utils.sheet_to_json(wc, {header:1, raw:true, defval:null}).forEach(f => { const k = nk(f[0]); if (k && k !== "dato" && k !== "configuracion de la web") cfg[k.replace(/[^a-z0-9]+/g,"_").replace(/^_|_$/g,"")] = f[1] != null ? String(f[1]).trim() : ""; });
+    if (cfg.whatsapp) cfg.whatsapp = cfg.whatsapp.replace(/\D/g,"");
+    return {config: cfg, productos: prods};
+  }
+  const cargarSheetJS = () => new Promise((ok, no) => { if (window.XLSX) return ok(); const s = document.createElement("script"); s.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"; s.onload = ok; s.onerror = no; document.head.appendChild(s); });
+  const cargar = () => Promise.all([cargarSheetJS(), fetch("datos/productos.xlsx?v=" + Date.now()).then(r => { if(!r.ok) throw 0; return r.arrayBuffer(); })]).then(([,buf]) => leerExcel(buf))
+    .catch(() => fetch("productos.json?v=" + Date.now()).then(r => { if(!r.ok) throw 0; return r.json(); }));
+
+  cargar().then(d => {
     todos = d.productos || [];
     config(d.config || {});
     let dest = todos.filter(p => p.destacado && p.imagen && !/agotad/i.test(p.stock));
