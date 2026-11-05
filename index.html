@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ofertas del Norte · Las mejores ofertas de Mercado Libre</title>
+<meta name="description" content="Celulares, audífonos, consolas, computación, cocina, hogar y zapatillas con las mejores ofertas de Mercado Libre y envío a todo Chile.">
+<meta name="theme-color" content="#0F2A4A">
+<meta property="og:title" content="Ofertas del Norte · Las mejores ofertas de Mercado Libre">
+<meta property="og:description" content="Tecnología, consolas, hogar y ropa con descuento. Compra protegida por Mercado Libre y envío a todo Chile.">
+<meta property="og:image" content="img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#0F2A4A; --azul-2:#14406E; --naranja:#FF8A1F; --naranja-osc:#E06A00; --ambar:#FFB547;
+  --fondo:#F4F6FA; --blanco:#fff; --texto:#13233A; --suave:#5F6B7D; --linea:#E1E6EE; --verde:#1F9D55; --rojo:#E5383B;
+  --sombra:0 1px 2px rgba(15,42,74,.06),0 6px 18px rgba(15,42,74,.08); --radio:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;color-scheme:light}
+body{margin:0;background:var(--fondo);color:var(--texto);font:16px/1.5 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+h1,h2,h3{line-height:1.15;margin:0;letter-spacing:-.01em}
+
+header{position:sticky;top:0;z-index:20;background:var(--azul);color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+.nav{display:flex;align-items:center;gap:14px;height:64px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+.marca img{width:42px;height:42px}
+.marca b{font-size:19px;font-weight:900;line-height:1;letter-spacing:.01em}
+.marca small{display:block;font-size:11px;color:var(--ambar);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:3px}
+.buscar-top{flex:1;max-width:520px;margin-left:12px;position:relative}
+.buscar-top input{width:100%;border:0;border-radius:999px;padding:11px 16px 11px 42px;font:600 15px Inter,system-ui,sans-serif;color:var(--texto);outline:none}
+.buscar-top svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--suave)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;text-decoration:none;font:800 15px/1 Inter,system-ui,sans-serif;border-radius:999px;padding:13px 20px;transition:transform .15s,background .15s}
+.btn:active{transform:scale(.97)}
+.btn-pri{background:var(--naranja);color:#fff}
+.btn-pri:hover{background:var(--naranja-osc)}
+.btn-sec{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
+.btn-wsp{background:#1F9D55;color:#fff;padding:10px 16px;margin-left:auto}
+.btn svg{width:18px;height:18px;flex:none}
+
+.hero{background:radial-gradient(900px 420px at 85% 0%,#1E5A96 0,transparent 60%),linear-gradient(160deg,#14406E,#0A1F38);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding-top:48px;padding-bottom:48px}
+.chip{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.12);padding:6px 12px;border-radius:999px;font-weight:700;font-size:14px}
+.hero h1{font-size:clamp(32px,5vw,54px);font-weight:900;margin:16px 0 14px}
+.hero h1 span{color:var(--ambar)}
+.hero p{font-size:18px;max-width:34em;margin:0 0 24px;color:#D6E2F1}
+.acciones{display:flex;flex-wrap:wrap;gap:10px}
+.confianza{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;font-weight:700;font-size:14px;color:#CFE0F5}
+.confianza span{display:flex;align-items:center;gap:6px}
+.confianza svg{width:18px;height:18px;color:var(--ambar)}
+.collage{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.collage a{background:#fff;border-radius:16px;aspect-ratio:1;display:grid;place-items:center;padding:12px;box-shadow:0 10px 24px rgba(0,0,0,.25);position:relative;text-decoration:none}
+.collage a:nth-child(2){transform:translateY(-14px)}
+.collage a:nth-child(5){transform:translateY(-14px)}
+.collage img{max-height:100%;object-fit:contain}
+.collage span{position:absolute;top:8px;left:8px;background:var(--rojo);color:#fff;font:800 12px Inter,sans-serif;padding:3px 8px;border-radius:999px}
+
+section{padding:44px 0;scroll-margin-top:64px}
+.titulo{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.titulo h2{font-size:clamp(24px,3.2vw,32px);font-weight:900;color:var(--azul)}
+.titulo p{margin:6px 0 0;color:var(--suave)}
+
+.cats{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:14px;scrollbar-width:thin}
+.cats button{flex:none;border:2px solid var(--linea);background:#fff;font:700 14px Inter,system-ui,sans-serif;padding:9px 14px;border-radius:999px;cursor:pointer;color:var(--texto);white-space:nowrap}
+.cats button[aria-pressed="true"]{background:var(--azul);border-color:var(--azul);color:#fff}
+.barra{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:18px}
+.barra p{margin:0;color:var(--suave);font-weight:600}
+.barra select{border:2px solid var(--linea);background:#fff;border-radius:999px;font:600 14px Inter,system-ui,sans-serif;padding:9px 14px;color:var(--texto);cursor:pointer}
+
+.grilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.card{background:#fff;border-radius:var(--radio);box-shadow:var(--sombra);display:flex;flex-direction:column;overflow:hidden;position:relative;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(15,42,74,.08),0 14px 30px rgba(15,42,74,.14)}
+.foto{background:#fff;aspect-ratio:1/1;display:grid;place-items:center;padding:16px;border-bottom:1px solid var(--linea)}
+.foto img{max-height:100%;width:auto;object-fit:contain}
+.badge{position:absolute;z-index:2;top:10px;left:10px;background:var(--rojo);color:#fff;font:800 13px Inter,system-ui,sans-serif;padding:4px 9px;border-radius:999px}
+.badge-stock{left:auto;right:10px;background:var(--azul)}
+.cuerpo{padding:12px 14px 14px;display:flex;flex-direction:column;gap:5px;flex:1}
+.mini{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--naranja-osc)}
+.card h3{font-weight:700;font-size:15px;line-height:1.3}
+.detalle{font-size:13px;color:var(--suave);margin:0}
+.precios{margin-top:auto;padding-top:8px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.precio{font:900 24px/1 Inter,system-ui,sans-serif;color:var(--texto)}
+.antes{color:var(--suave);text-decoration:line-through;font-weight:600;font-size:14px}
+.ahorro{font-size:13px;color:var(--verde);font-weight:800}
+.card .btn{width:100%;margin-top:10px}
+.codigo{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px;font-size:12px;color:var(--suave);background:var(--fondo);border-radius:10px;padding:6px 6px 6px 10px}
+.codigo b{font-family:ui-monospace,Menlo,monospace;color:var(--texto);white-space:nowrap}
+.codigo button{border:0;background:#fff;border-radius:8px;font:800 12px Inter,system-ui,sans-serif;padding:6px 10px;cursor:pointer;color:var(--azul);box-shadow:inset 0 0 0 1px var(--linea)}
+.card.agotado .foto,.card.agotado .precios{opacity:.45}
+.vacio{grid-column:1/-1;text-align:center;padding:40px;color:var(--suave);background:#fff;border-radius:var(--radio)}
+
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:p}
+.paso{background:#fff;border-radius:var(--radio);padding:22px;box-shadow:var(--sombra)}
+.paso::before{counter-increment:p;content:counter(p);display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--naranja);color:#fff;font:900 20px Inter,sans-serif;margin-bottom:12px}
+.paso h3{font-size:19px;color:var(--azul);margin-bottom:6px}
+.paso p{margin:0;color:var(--suave)}
+.ayuda{margin-top:18px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:#EAF7EF;border:2px solid #BFE6CD;border-radius:var(--radio);padding:18px 20px}
+.ayuda b{display:block;font-size:18px;color:#145C38}
+.ayuda > div span{color:#2F5E45}
+
+.faq{max-width:820px}
+details{background:#fff;border-radius:14px;box-shadow:var(--sombra);margin-bottom:10px}
+summary{cursor:pointer;list-style:none;padding:16px 48px 16px 18px;font-weight:800;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font:900 22px Inter,sans-serif;color:var(--naranja)}
+details[open] summary::after{content:"–"}
+details p{margin:0;padding:0 18px 16px;color:var(--suave)}
+
+footer{background:var(--azul);color:#C9D6E6;padding:40px 0 28px;margin-top:20px}
+footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+footer h3{color:#fff;font-size:19px;margin-bottom:10px}
+footer p{margin:0 0 8px;font-size:14px}
+footer a{color:#fff}
+.aviso{border-top:1px solid rgba(255,255,255,.12);margin-top:24px;padding-top:16px;font-size:13px;color:#93A6BF}
+
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,120px);background:var(--azul);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;transition:transform .25s,opacity .25s;z-index:50;opacity:0;pointer-events:none}
+.toast.ver{transform:translate(-50%,0);opacity:1}
+.wsp-flot{position:fixed;right:16px;bottom:16px;z-index:30;width:56px;height:56px;border-radius:50%;background:#1F9D55;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.wsp-flot svg{width:30px;height:30px;color:#fff}
+[hidden]{display:none!important}
+
+@media (max-width:900px){
+  .buscar-top{display:none}
+  .hero .wrap{grid-template-columns:1fr;padding-top:28px;padding-bottom:36px}
+  .collage{order:-1}
+  .pasos,footer .cols{grid-template-columns:1fr}
+  section{padding:34px 0}
+}
+@media (max-width:520px){
+  .grilla{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .cuerpo{padding:10px}
+  .card h3{font-size:13.5px}
+  .detalle{display:none}
+  .precio{font-size:19px}
+  .btn{padding:12px 12px;font-size:14px}
+  .codigo{flex-direction:column;align-items:flex-start;font-size:11.5px}
+  .codigo button{width:100%}
+  .marca small{display:none}
+  .largo{display:none}
+  #wspHeader{display:none!important}
+  .collage a:nth-child(n+4){display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="marca" href="#inicio" aria-label="Ofertas del Norte, inicio">
+      <img src="img/logo.webp" alt="" width="42" height="42">
+      <span><b>Ofertas del Norte</b><small>Envíos a todo Chile</small></span>
+    </a>
+    <label class="buscar-top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="qTop" type="search" placeholder="Busca celulares, audífonos, consolas…" aria-label="Buscar producto">
+    </label>
+    <a class="btn btn-wsp" id="wspHeader" hidden target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.2Z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="chip">🔥 Ofertas reales de Mercado Libre</span>
+        <h1>Tecnología, hogar y moda <span>al mejor precio</span></h1>
+        <p>Celulares, audífonos, consolas, cocina, hogar y zapatillas con descuento. Tú compras directo en Mercado Libre, con su compra protegida y envío a todo Chile.</p>
+        <div class="acciones">
+          <a class="btn btn-pri" href="#productos">Ver ofertas</a>
+          <a class="btn btn-sec" href="#como-comprar">¿Cómo comprar?</a>
+        </div>
+        <div class="confianza">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>Compra protegida por Mercado Libre</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>Envío a todo Chile</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Precios actualizados a diario por Mercado Libre</span>
+        </div>
+      </div>
+      <div class="collage" id="collage" aria-label="Ofertas destacadas"></div>
+    </div>
+  </div>
+
+  <section id="productos">
+    <div class="wrap">
+      <div class="titulo"><div><h2>Todas las ofertas</h2><p>Elige una categoría o busca lo que necesitas.</p></div></div>
+      <div class="cats" id="cats" role="group" aria-label="Categorías"></div>
+      <div class="barra">
+        <p id="contador">Cargando productos…</p>
+        <select id="orden" aria-label="Ordenar">
+          <option value="desc">Mayor descuento</option>
+          <option value="precio">Menor precio</option>
+          <option value="precioMayor">Mayor precio</option>
+        </select>
+      </div>
+      <div class="grilla" id="gProductos"></div>
+    </div>
+  </section>
+
+  <section id="como-comprar" style="background:#fff">
+    <div class="wrap">
+      <div class="titulo"><div><h2>Cómo comprar</h2><p>Fácil y seguro, en 3 pasos.</p></div></div>
+      <div class="pasos">
+        <div class="paso"><h3>Elige tu producto</h3><p>Revisa el precio, el descuento y lo que ahorras.</p></div>
+        <div class="paso"><h3>Toca “Comprar en Mercado Libre”</h3><p>Se abre la publicación en Mercado Libre. Desde la app también puedes pegar el código en el buscador.</p></div>
+        <div class="paso"><h3>Paga y recibe en casa</h3><p>Pagas en Mercado Libre, con cuotas y compra protegida. Ellos se encargan del envío.</p></div>
+      </div>
+      <div class="ayuda" id="ayudaCompra">
+        <div><b>¿No sabes cómo comprar o no puedes hacerlo?</b><span>Escríbenos por WhatsApp y te ayudamos a realizar la compra.</span></div>
+        <a class="btn btn-wsp" id="wspAyuda" style="margin-left:0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.2Z"/></svg><span id="wspAyudaNum">Escríbenos</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="preguntas">
+    <div class="wrap faq">
+      <div class="titulo"><div><h2>Preguntas frecuentes</h2></div></div>
+      <details><summary>¿Quién me vende el producto?</summary><p>Un vendedor de Mercado Libre. Compras directamente en Mercado Libre, así que tienes su compra protegida: si no llega o llega distinto, te devuelven el dinero.</p></details>
+      <details><summary>¿El precio puede ser distinto al de la web?</summary><p>Sí. Los precios se actualizan diariamente por Mercado Libre, así que pueden subir o bajar. El precio que vale es el que ves en Mercado Libre al momento de pagar.</p></details>
+      <details><summary>¿Hacen envíos a mi ciudad?</summary><p>Sí, a todo Chile. Los envíos los hace Mercado Libre: en la publicación ves el costo y la fecha de entrega para tu dirección antes de pagar.</p></details>
+      <details><summary>¿Para qué sirve el código?</summary><p>Si nos viste en redes, copia el código (por ejemplo 5PZ96Y-XXXX) y pégalo en el buscador de la app de Mercado Libre. Te lleva directo al producto.</p></details>
+      <details><summary>No sé comprar en Mercado Libre, ¿me ayudan?</summary><p>Sí. Escríbenos por WhatsApp y te ayudamos a realizar la compra paso a paso.</p></details>
+      <details><summary>¿Pagar por su link me sale más caro?</summary><p>No. Pagas exactamente el mismo precio que en Mercado Libre.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h3>Ofertas del Norte</h3>
+        <p>Las mejores ofertas de Mercado Libre, con envío a todo Chile.</p>
+        <p>Los precios se actualizan diariamente por Mercado Libre. <span id="fechaPie"></span></p>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <p id="wspPie" hidden></p>
+        <p id="correoPie" hidden></p>
+      </div>
+      <div>
+        <h3>También te puede servir</h3>
+        <p id="hermana" hidden></p>
+        <p id="perfilML" hidden></p>
+      </div>
+    </div>
+    <p class="aviso">Ofertas del Norte participa en el Programa de Afiliados de Mercado Libre. No somos Mercado Libre ni vendemos directamente. Las imágenes y marcas pertenecen a sus dueños.</p>
+  </div>
+</footer>
+
+<a class="wsp-flot" id="wspFlot" hidden target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.2Z"/></svg>
+</a>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+  const fmt = n => "$" + Math.round(n).toLocaleString("es-CL");
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const norm = s => String(s||"").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+  const ICON = {"Celulares y audio":"📱","Consolas y juegos":"🎮","Computación":"💻","Cocina y electro":"🍳","Hogar":"🏠","Ropa y zapatillas":"👟","Belleza":"💄","Deportes":"⚽","Mascotas":"🐾"};
+  let todos = [], cat = "Todas", q = "";
+
+  function tarjeta(p){
+    const agotado = /agotad/i.test(p.stock), ultima = /ultima|última|poco/i.test(p.stock);
+    const badge = p.descuento ? `<span class="badge">-${p.descuento}%</span>` : "";
+    const stock = agotado ? `<span class="badge badge-stock">Agotado</span>` : ultima ? `<span class="badge badge-stock">¡Última unidad!</span>` : "";
+    const antes = p.antes ? `<span class="antes">${fmt(p.antes)}</span>` : "";
+    const ahorro = p.antes ? `<span class="ahorro">Ahorras ${fmt(p.antes - p.precio)}</span>` : "";
+    const img = p.imagen ? `<img src="${esc(p.imagen)}" alt="${esc(p.nombre)}" loading="lazy" width="260" height="260" referrerpolicy="no-referrer">` : `<span style="font-size:52px">🛍️</span>`;
+    const cod = p.codigo ? `<div class="codigo"><span>Código: <b>${esc(p.codigo)}</b></span><button type="button" data-copiar="${esc(p.codigo)}">Copiar</button></div>` : "";
+    return `<article class="card${agotado ? " agotado" : ""}">${badge}${stock}
+      <div class="foto">${img}</div>
+      <div class="cuerpo">
+        <span class="mini">${esc(p.marca || p.tipo)}</span>
+        <h3>${esc(p.nombre)}</h3>
+        ${p.detalle ? `<p class="detalle">${esc(p.detalle)}</p>` : ""}
+        <div class="precios"><span class="precio">${fmt(p.precio)}</span>${antes}</div>
+        ${ahorro}
+        <a class="btn btn-pri" href="${esc(p.link)}" target="_blank" rel="sponsored noopener"><span>${agotado ? "Ver" : "Comprar"}<span class="largo"> en Mercado Libre</span></span></a>
+        ${cod}
+      </div></article>`;
+  }
+
+  function pintarCats(){
+    const cats = ["Todas", ...new Set(todos.map(p => p.tipo))];
+    $("#cats").innerHTML = cats.map(c => `<button type="button" data-cat="${esc(c)}" aria-pressed="${c===cat}">${c==="Todas" ? "Todas" : (ICON[c]||"🛒") + " " + esc(c)}</button>`).join("");
+  }
+
+  function pintar(){
+    const nq = norm(q);
+    const ag = p => /agotad/i.test(p.stock) ? 1 : 0;
+    let lista = todos.filter(p => (cat === "Todas" || p.tipo === cat) && (!nq || norm(p.nombre+" "+p.marca+" "+p.detalle+" "+p.tipo).includes(nq)));
+    const o = $("#orden").value;
+    if (o === "precio") lista.sort((a,b) => ag(a)-ag(b) || a.precio-b.precio);
+    else if (o === "precioMayor") lista.sort((a,b) => ag(a)-ag(b) || b.precio-a.precio);
+    else lista.sort((a,b) => ag(a)-ag(b) || (b.descuento||0)-(a.descuento||0));
+    $("#gProductos").innerHTML = lista.length ? lista.map(tarjeta).join("") : `<div class="vacio">No encontramos productos con esa búsqueda. Prueba otra palabra o elige “Todas”.</div>`;
+    $("#contador").textContent = `${lista.length} oferta${lista.length===1?"":"s"}${cat!=="Todas" ? " en " + cat : ""}`;
+  }
+
+  function config(c){
+    if (c.fecha_de_precios) $("#fechaPie").textContent = "Última revisión en esta web: " + c.fecha_de_precios + ".";
+    if (c.whatsapp){
+      const num = "+" + c.whatsapp.replace(/^(56)(9)(\d{4})(\d{4})$/, "$1 $2 $3 $4");
+      const url = "https://wa.me/" + c.whatsapp + "?text=" + encodeURIComponent("Hola Ofertas del Norte, tengo una consulta");
+      ["#wspHeader","#wspFlot"].forEach(s => { const a = $(s); a.href = url; a.hidden = false; });
+      $("#wspAyuda").href = "https://wa.me/" + c.whatsapp + "?text=" + encodeURIComponent("Hola Ofertas del Norte, quiero comprar un producto y necesito ayuda");
+      $("#wspAyudaNum").textContent = num;
+      const pie = $("#wspPie"); pie.innerHTML = `WhatsApp: <a href="${url}" target="_blank" rel="noopener">${num}</a>`; pie.hidden = false;
+    } else $("#ayudaCompra").hidden = true;
+    if (c.correo){ const e = $("#correoPie"); e.innerHTML = `Correo: <a href="mailto:${esc(c.correo)}">${esc(c.correo)}</a>`; e.hidden = false; }
+    if (c.tienda_hermana){ const h = $("#hermana"); h.innerHTML = `🐾 <a href="${esc(c.tienda_hermana)}" target="_blank" rel="noopener">Huellitas del Norte</a>: alimento y cuidado para mascotas`; h.hidden = false; }
+    if (c.perfil_mercado_libre){ const m = $("#perfilML"); m.innerHTML = `🛒 <a href="${esc(c.perfil_mercado_libre)}" target="_blank" rel="noopener">Nuestras listas en Mercado Libre</a>`; m.hidden = false; }
+  }
+
+  function toast(t){ const el = $("#toast"); el.textContent = t; el.classList.add("ver"); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("ver"), 2200); }
+  function fallback(txt, ok){ const a = document.createElement("textarea"); a.value = txt; document.body.appendChild(a); a.select(); try{ document.execCommand("copy"); ok(); }catch(_){} a.remove(); }
+
+  document.addEventListener("click", e => {
+    const b = e.target.closest("[data-copiar]");
+    if (b){ const txt = b.dataset.copiar; const ok = () => { toast("Código copiado: " + txt); b.textContent = "¡Copiado!"; setTimeout(() => b.textContent = "Copiar", 1600); };
+      if (navigator.clipboard) navigator.clipboard.writeText(txt).then(ok, () => fallback(txt, ok)); else fallback(txt, ok); }
+    const c = e.target.closest("[data-cat]");
+    if (c){ cat = c.dataset.cat; document.querySelectorAll("#cats button").forEach(x => x.setAttribute("aria-pressed", x === c)); pintar(); }
+  });
+  $("#qTop").addEventListener("input", e => { q = e.target.value; if (q && cat !== "Todas"){ cat = "Todas"; pintarCats(); } pintar(); });
+  $("#qTop").addEventListener("keydown", e => { if (e.key === "Enter") document.querySelector("#productos").scrollIntoView(); });
+  $("#orden").addEventListener("change", pintar);
+
+  fetch("productos.json?v=" + Date.now()).then(r => { if(!r.ok) throw 0; return r.json(); }).then(d => {
+    todos = d.productos || [];
+    config(d.config || {});
+    let dest = todos.filter(p => p.destacado && p.imagen && !/agotad/i.test(p.stock));
+    const resto = todos.filter(p => !dest.includes(p) && p.imagen && !/agotad/i.test(p.stock)).sort((a,b) => (b.descuento||0)-(a.descuento||0));
+    dest = dest.concat(resto).slice(0,6);
+    $("#collage").innerHTML = dest.map(p => `<a href="${esc(p.link)}" target="_blank" rel="sponsored noopener" title="${esc(p.nombre)}">${p.descuento ? `<span>-${p.descuento}%</span>` : ""}<img src="${esc(p.imagen)}" alt="${esc(p.nombre)}" referrerpolicy="no-referrer"></a>`).join("");
+    pintarCats(); pintar();
+  }).catch(() => {
+    $("#contador").textContent = "";
+    $("#gProductos").innerHTML = `<div class="vacio">No pudimos cargar los productos. Recarga la página en un momento.</div>`;
+  });
+})();
+</script>
+</body>
+</html>
